@@ -11,4 +11,5 @@
 ### 4.打开application.yaml文件将username、passwpord、url修改成自己电脑的配置
 ## 三.数据库sql文件
 ### 1.我将数据库sql代码放在下方
+[smart_albums.txt](https://github.com/huangyang-666/smart_albums/files/6813370/smart_albums.txt)
 
