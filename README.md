@@ -3,7 +3,7 @@
 # 项目复现一般步骤
 ## 一.将项目下载到本地
 ### 1.BackEndCode后端代码可放在电脑的任意位置
-### 2.FrontEndCode前端代码需要在D盘下创建文件夹1rjb，然后将前端代码放进文件夹，然后将FrontEndCode重命名为webphoto2，最后前端代码路径为D:\1rjb\FrontEndCode
+### 2.FrontEndCode前端代码需要在D盘下创建文件夹1rjb，然后将前端代码放进文件夹，之后再将FrontEndCode重命名为webphoto2，最后前端代码路径为D:\1rjb\FrontEndCode
 ## 二.配置项目环境
 ### 1.使用idea打开后端代码
 ### 2.使用数据库sql文件在本地创建mysql数据库
