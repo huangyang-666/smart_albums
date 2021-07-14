@@ -194,6 +194,7 @@ public class faceDetect {
             Date date = new Date();
             String format = sdf.format(date);
             List<faceset> facesets = facesetMapper.queryFaceSets(master);
+            facesets.add(new faceset(-1,"119705","every","2021-6","eceryonehave","all","123456",0));
 //        将人脸照片，传入人脸库中进行匹配
             faceSearchUtil faceSearchUtil = new faceSearchUtil();
 //        获取人脸搜索的结果
