@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ecloud-engine-sdk-1.0.0-jar-with-dependencies">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../软件杯--图像识别/移动云图像识别JavcaSDK（携带依赖文件）/ecloud-engine-sdk-1.0.0-jar-with-dependencies.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

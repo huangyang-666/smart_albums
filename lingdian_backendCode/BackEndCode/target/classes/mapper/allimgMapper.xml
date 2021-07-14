@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huang.mapper.allimgmapper">
+    <select id="updateallimg">
+        insert into allimgs(`imgName`, `uploadTime`, `imgSize`, `imgType`, `details`, `imgPath`, `master`, `md5`,
+                            `name`, `faceId`)
+        VALUES (#{imgName}, #{uploadTime}, #{imgSize}, #{imgType}, #{details}, #{imgPath}, #{master}, #{md5}, #{name},
+                #{faceId})
+    </select>
+
+    <select id="queryallimgs" resultType="commonimg">
+        select *
+        from allimgs
+        where `master` = #{master}
+    </select>
+
+    <delete id="delimg">
+        delete
+        from allimgs
+        where `master` =
+              #{master}
+          and `faceSet`
+            =
+              #{faceSet}
+          and `faceId`
+            =
+              #{faceId}
+    </delete>
+    <!--    void updateFaceId(String master,String faceStoreId,String faceId);-->
+    <update id="updateFaceId">
+        update allimgs
+        set `faceId`=#{faceId}
+        where `faceStoreId` = #{faceStoreId}
+          and `master` = #{master}
+          and `imgName` = #{imgName}
+    </update>
+
+    <delete id="delfaces">
+        delete
+        from allimgs
+        where `master` =
+              #{master}
+          and `faceStoreId`
+            =
+              #{faceStoreId}
+    </delete>
+
+    <delete id="delcommonimg">
+        delete
+        from allimgs
+        where `master` = #{master}
+          and `name` = #{name}
+    </delete>
+    <!--queryImgInfoByName-->
+    <select id="queryImgInfoByName" resultType="commonimg">
+        select *
+        from allimgs
+        where `name` = #{name}
+          and `master` = #{master}
+    </select>
+    <!--    通过关键词进行模糊查询 List<commonimg> queryImgInofBykeyWords(String master,String keywords);-->
+    <select id="queryImgInfoBykeyWords" resultType="commonimg">
+        select *
+        from allimgs
+        where (`details` like "%"#{keywords}"%" or `imgType` like "%"#{keywords}"%" or `name` like "%" #{keywords}"%"
+            or `uploadTime` like "%" #{keywords}"%")
+    </select>
+    <!--    void updateImgInfos(String master,String name,String details,String imgType);-->
+    <!--    update allimgs set `imgSize`='11' where `name`='admin20210623210300download.jpg' and  `master`='admin'-->
+    <update id="updateImgInfos">
+        update allimgs
+        set `details` = #{details},
+            `imgType` = #{imgType}
+        where `name` = #{name}
+          and `master` = #{master}
+    </update>
+
+
+</mapper>

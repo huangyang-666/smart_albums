@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huang.mapper.faceMapper.humanmapper">
+    <select id="addhumanInfo">
+        insert into humans(`imgName`, `uploadTime`, `imgSize`, `imgType`, `details`, `imgPath`, `master`, `md5`, `name`,
+                           `faceSet`, `faceId`)
+        VALUES (#{imgName}, #{uploadTime}, #{imgSize}, #{imgType}, #{details}, #{imgPath}, #{master}, #{md5}, #{name},
+                #{faceSet}, #{faceId})
+    </select>
+    <!--    查询所有照片-->
+    <select id="queryhumans" resultType="human">
+        select *
+        from humans
+        where `master` = #{master}
+    </select>
+
+    <delete id="deleteface">
+        drop
+        * from humans where `master`=
+        #{master}
+        and
+        `faceSet`
+        =
+        #{faceSet}
+        and
+        `faceId`
+        =
+        #{faceId}
+    </delete>
+
+    <delete id="delfaces">
+        delete
+        from humans
+        where `master` = #{master}
+          and `faceSet` = #{faceSet}
+
+    </delete>
+    <!--    List<human> queryfaces(String master,String faceStoreId);-->
+    <select id="queryfaces" resultType="human">
+        select *
+        from humans
+        where `master` = #{master}
+          and `faceSet` = #{faceStoreId}
+    </select>
+
+    <select id="queryfaceByname" resultType="human">
+        select *
+        from humans
+        where `master` = #{master}
+          and `name` = #{name}
+    </select>
+
+    <delete id="deletehumanImg">
+        delete
+        from humans
+        where `master` = #{master}
+          and `name` = #{name}
+    </delete>
+
+
+</mapper>

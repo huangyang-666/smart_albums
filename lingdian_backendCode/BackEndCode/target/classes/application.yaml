@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/smart_albums?useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #加入对上传文件的内容要求
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      file-size-threshold: 10MB
+      resolve-lazily: false
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml,classpath:mapper/faceMapper/*.xml,classpath:mapper/moments/*.xml   #一个字母都不能写错！这个地方选的是mapper-locations
+  type-aliases-package: com.huang.pojo

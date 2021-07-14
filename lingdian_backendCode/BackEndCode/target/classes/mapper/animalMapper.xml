@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huang.mapper.animalmapper">
+    <select id="addanimalInfo">
+        insert into animals(`imgName`, `uploadTime`, `imgSize`, `imgType`, `details`, `imgPath`, `master`, `md5`,`name`)
+        VALUES (#{imgName}, #{uploadTime}, #{imgSize}, #{imgType}, #{details}, #{imgPath}, #{master}, #{md5},#{name})
+    </select>
+    <!--    查询所有照片-->
+    <select id="queryanimals" resultType="animal">
+        select *
+        from animals
+        where `master` = #{master}
+    </select>
+
+    <delete id="deleteanimalimg">
+        delete from animals where `master`=#{master} and `name`=#{name}
+    </delete>
+
+
+</mapper>

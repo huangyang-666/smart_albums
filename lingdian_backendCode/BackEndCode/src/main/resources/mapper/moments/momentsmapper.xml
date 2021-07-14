@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huang.mapper.moments.Momentsmapper">
+
+    <select id="addmoment">
+        insert into moments(`name`, `master`, `storePath`, `uploadTime`, `videoType`)
+        values (#{name}, #{master}, #{storePath}, #{uploadTime}, #{videoType})
+    </select>
+
+    <select id="querymoments" resultType="happymoment">
+        select *
+        from moments
+        where `master` = #{master}
+          and `videoType` = #{type}
+    </select>
+
+
+</mapper>

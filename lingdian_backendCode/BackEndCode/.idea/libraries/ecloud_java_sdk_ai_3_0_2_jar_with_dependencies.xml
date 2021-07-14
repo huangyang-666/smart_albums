@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ecloud-java-sdk-ai-3.0.2-jar-with-dependencies">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../软件杯--图像识别/人脸识别模块/ecloud-java-sdk-ai-3.0.2-jar-with-dependencies.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

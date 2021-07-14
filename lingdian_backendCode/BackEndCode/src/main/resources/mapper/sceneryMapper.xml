@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huang.mapper.scenerymapper">
+    <select id="addsceneryInfo">
+        insert into sceneries(`imgName`, `uploadTime`, `imgSize`, `imgType`, `details`, `imgPath`, `master`, `md5`,
+                              `name`)
+        VALUES (#{imgName}, #{uploadTime}, #{imgSize}, #{imgType}, #{details}, #{imgPath}, #{master}, #{md5}, #{name})
+    </select>
+    <!--    查询所有照片-->
+    <select id="querysceneries" resultType="scenery">
+        select *
+        from sceneries
+        where `master` = #{master}
+    </select>
+
+    <delete id="delsceneryimg">
+        delete from sceneries where `master`=#{master} and `name`=#{name}
+
+    </delete>
+
+
+</mapper>

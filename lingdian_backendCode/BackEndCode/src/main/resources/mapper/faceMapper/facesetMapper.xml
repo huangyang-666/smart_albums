@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huang.mapper.faceMapper.facesetMapper">
+    <update id="addfaceset">
+        insert into facesets(`name`, `uploadTime`, `details`, `master`, `appkey`, `faceStoreId`)
+        VALUES (#{name}, #{uploadTime}, #{details}, #{master}, #{appkey}, #{faceStoreId})
+    </update>
+
+    <select id="getAppKey" resultType="faceset">
+        select *
+        from facesets
+        where `faceStoreId` = #{faceStoreId}
+    </select>
+
+    <select id="queryFaceSets" resultType="faceset">
+        select *
+        from facesets
+        where `master` = #{master}
+    </select>
+
+    <update id="updateCount">
+        update facesets
+        set `imgcount`=#{count}
+        where `faceStoreId` = #{faceStoreId}
+          and `master` = #{master}
+    </update>
+
+    <!--void delFaceSet(String master,String faceStoreId);    -->
+    <delete id="delFaceSet">
+        delete
+        from facesets
+        where `faceStoreId` = #{faceStoreId}
+    </delete>
+
+
+</mapper>

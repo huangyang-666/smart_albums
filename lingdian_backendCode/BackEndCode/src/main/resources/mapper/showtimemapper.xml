@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huang.mapper.showtimemapper">
+    <select id="addshowtime">
+        insert into showtimes(`master`, `name`, `imgPath`, `mood`,`date`)
+        values (#{master}, #{name}, #{imgPath}, #{mood},#{date})
+    </select>
+
+    <select id="queryallshowtime" resultType="showtime">
+        select *
+        from showtimes
+    </select>
+
+    <!--    文本信息搜索==》模糊查询-->
+    <!--    #{}防止Sql注入，${}无法防止Sql注入-->
+    <select id="queryshowtimeBymood" resultType="showtime">
+        select *
+        from showtimes
+        where mood like "%"#{keyword}"%"
+    </select>
+
+
+</mapper>
