@@ -1,6 +1,6 @@
 # smart_albums
 零点战队备战第十届软件杯的远程代码仓库
-# 项目复现一般步骤
+# 项目复现一般步骤(需要使用谷歌浏览器进行访问)
 ## 一.将项目下载到本地
 #### 1.BackEndCode后端代码可放在电脑的任意位置
 #### 2.FrontEndCode前端代码需要在D盘下创建文件夹1rjb，然后将前端代码放进文件夹，之后再将FrontEndCode重命名为webphoto2，最后前端代码路径为D:\1rjb\FrontEndCode
